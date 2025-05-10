@@ -431,70 +431,68 @@ Describe common usage scenarios.
 
 #### Implementation Details (`implementation.md`)
 
-```markdown
----
-ai_keywords: [ModuleName, Implementation, API, DataFlow]
-ai_contexts: [implementation, development]
-ai_relations: [path/to/module/overview, path/to/data/model]
----
+   ---
+   ai_keywords: [ModuleName, Implementation, API, DataFlow]
+   ai_contexts: [implementation, development]
+   ai_relations: [path/to/module/overview, path/to/data/model]
+   ---
 
-# ModuleName Implementation Details
+   # ModuleName Implementation Details
 
-<!-- AI-IMPORTANCE:level=high -->
-## Technical Overview
+   <!-- AI-IMPORTANCE:level=high -->
+   ## Technical Overview
 
-Briefly describe the technologies and methods used in the implementation.
+   Briefly describe the technologies and methods used in the implementation.
 
-<!-- AI-CONTEXT-START:type=implementation -->
-## Core Implementation
+   <!-- AI-CONTEXT-START:type=implementation -->
+   ## Core Implementation
 
-Detail the core functionality implementation.
+   Detail the core functionality implementation.
 
-### Data Structures
+   ### Data Structures
 
-```typescript
-interface ExampleInterface {
-field1: string;
-field2: number;
-}
-```
+   ```typescript
+   interface ExampleInterface {
+   field1: string;
+   field2: number;
+   }
+   ```
 
-### Key Algorithms
+   ### Key Algorithms
 
-Describe key algorithms.
+   Describe key algorithms.
 
-### Data Flow
+   ### Data Flow
 
-Describe how data flows through this module.
-<!-- AI-CONTEXT-END -->
+   Describe how data flows through this module.
+   <!-- AI-CONTEXT-END -->
 
-<!-- AI-CONTEXT-START:type=development -->
-## Development Guide
+   <!-- AI-CONTEXT-START:type=development -->
+   ## Development Guide
 
-### API Usage
+   ### API Usage
 
-```typescript
-// Example code
-const result = api.doSomething(param);
-```
+   ```typescript
+   // Example code
+   const result = api.doSomething(param);
+   ```
 
-### Important Notes
+   ### Important Notes
 
-Issues to be aware of during development.
+   Issues to be aware of during development.
 
-### Extension Points
+   ### Extension Points
 
-How to extend the functionality of this module.
-<!-- AI-CONTEXT-END -->
+   How to extend the functionality of this module.
+   <!-- AI-CONTEXT-END -->
 
-## Testing Strategy
+   ## Testing Strategy
 
-Describe how to test this module.
+   Describe how to test this module.
 
-## Known Limitations
+   ## Known Limitations
 
-List known limitations and issues.
-```
+   List known limitations and issues.
 
 ## Building Implementation Process
 
