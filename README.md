@@ -6,7 +6,7 @@
 ![Support](https://img.shields.io/badge/support-Roo%20Code-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
-<p><strong>AI-friendly project documentation for<br>continuous maintenance through AI assistance （Roo Code）</strong></p>
+<p><strong>AI-friendly project documentation for<br>continuous maintenance through AI assistance (Roo Code)</strong></p>
 
 [English](README.md) | [中文](README.zh.md)
 
@@ -16,7 +16,7 @@
 
 ## 📖 Introduction
 
-Vibook creates an "AI-understandable" knowledge network that helps AI coding assistants efficiently maintain existing projects.
+Vibook creates an "AI-understandable" knowledge network that helps AI coding assistants (Roo Code) efficiently maintain existing projects.
 
 | Capability | Implementation |
 |:----:|:--------|

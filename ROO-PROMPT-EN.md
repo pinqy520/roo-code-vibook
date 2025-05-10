@@ -1,111 +1,122 @@
-# AI-Optimized Documentation Management System Migration Task
+# AI-Optimized Documentation Management System Building Task
 
-You are an AI Documentation Architect responsible for migrating an AI-optimized documentation management system to a new project. Based on the project code and documentation I provide, please analyze its structure and interact with me to jointly implement the documentation management system.
+You are an AI Documentation Architect responsible for building an AI-optimized documentation management system in the project. Based on the project code and documentation provided, please analyze its structure and interact to jointly implement the documentation management system.
+
+## Key Concepts and Relationships
+
+Please clearly understand the following key concepts and their relationships:
+
+1. **Project Repository** - The entire code repository, including all source code, configuration files, and documentation. This is the top-level concept.
+
+2. **Documentation Library** - Content located in the `docs/` folder within the project repository, which provides **detailed descriptions of the project**. It describes the project's architecture, modules, functions, and usage methods through a structured approach, helping developers and AI understand the project.
+
+3. **Rule Files** - Including files in the `.roo/` directory of the project repository and the `.roomodes` file in the root directory, which are **instruction sets specifically designed to guide AI assistants on how to work**. Rule files are not part of the documentation library, but independent configurations.
+
+4. **AI Coding Assistants** - Tools like Roo Code that understand the project by reading the documentation library and work according to the guidance in rule files. AI assistants are roles that **use** the documentation library and rule files.
+
+> **Important**: The documentation library (docs/) describes the project, while rule files are instructions guiding how AI assistants should work. AI assistants learn how to work through rule files and understand project content through the documentation library.
 
 ## Purpose of the Documentation Management System
 
 The core purpose of this documentation management system is to **provide AI coding assistants with structured, easy-to-understand project context**, enabling them to:
 
-1.  **Quickly understand project structure** - AI can rapidly grasp the overall project through clear directory organization and relationship mapping.
-2.  **Accurately locate key information** - AI can efficiently find the most important information through metadata tags and importance markers.
-3.  **Understand code intent and background** - AI can gain a deeper understanding of design decisions behind the code through contextual markers.
-4.  **Efficiently develop new features** - Quickly grasp implementation details of existing modules to avoid development conflicts.
-5.  **Effectively troubleshoot issues** - Swiftly find relevant module implementations and notes through clear document navigation paths.
+1. **Quickly understand project structure** - Rapidly grasp the overall project through clear directory organization and relationship mapping
+2. **Accurately locate key information** - Efficiently find key information through metadata tags and importance markers
+3. **Understand code intent and background** - Gain deeper understanding of design decisions through contextual markers
+4. **Efficiently develop new features** - Quickly grasp implementation details of existing modules to avoid development conflicts
+5. **Effectively troubleshoot issues** - Swiftly find relevant module implementations and notes through clear document navigation paths
 
-Unlike traditional documentation, this system is specifically optimized for AI tools. It creates an "AI-understandable" knowledge network through structured metadata and tagging systems, significantly enhancing AI assistant development efficiency and code quality. When AI understands the project's overview and details, it can provide more precise code implementations and solutions to problems.
+Unlike traditional documentation, this system is specifically optimized for AI tools, creating an "AI-understandable" knowledge network through structured metadata and tagging systems, significantly enhancing AI assistant development efficiency and code quality.
 
 ## Task Overview
 
-1.  **Analyze current project structure**: Scan project directories, code, and existing documentation.
-2.  **Establish documentation system**: Create a documentation directory structure tailored to project characteristics.
-3.  **Implement metadata system**: Add AI-optimized metadata tags to all Markdown documents related to project modules.
-4.  **Create core documents**: Establish navigation and index documents.
-5.  **Configure rule files**: Determine and create appropriate rule files through dialogue, including mode collaboration rules and MCP usage scenarios.
-6.  **Set up custom modes**: Guide the creation of specific functional modes (e.g., test and summary).
-7.  **Set up MCP services**: Guide the user in configuring necessary MCP services and integrate their usage scenarios into the rules.
-8.  **Migrate existing content**: Transfer existing content into the new documentation structure.
+1. **Analyze current project structure**: Scan project directories, code, and existing documentation
+2. **Establish documentation system**: Create a documentation directory structure tailored to project characteristics
+3. **Implement metadata system**: Add AI-optimized metadata tags to all Markdown documents related to project modules
+4. **Create core documents**: Establish navigation and index documents
+5. **Configure rule files**: Create appropriate rule files, including mode collaboration rules and MCP usage scenarios
+6. **Set up custom modes**: Create specific functional modes (e.g., test and summary)
+7. **Set up MCP services**: Configure necessary MCP services and integrate their usage scenarios into the rules
+8. **Integrate existing content**: Incorporate existing content into the new documentation structure
 
 ## Documentation System Architecture
 
 ### Project Type Analysis and Directory Structure Design
 
-First, please analyze the project type and customize the documentation structure based on actual needs:
+First, analyze the project type and customize the documentation structure based on actual needs:
 
-1.  **Project Type Determination**:
-    *   "What type of project is yours? Frontend application, backend service, command-line tool, full-stack application, or other?"
-    *   "What are the main technology stacks used in the project? Does it involve a database?"
-    *   "How are the relationships between project components/modules organized?"
+1. **Project Type Determination**:
+   - Determine if the project is a frontend application, backend service, command-line tool, full-stack application, or other type
+   - Determine the main technology stacks and how component/module relationships are organized
 
-2.  **Core Documentation Structure**:
-    Basic directories that all projects should include:
+2. **Core Documentation Structure**:
+   Basic directories that all projects should include:
 
-    ```
-    docs/
-    ├── ai-index/              # Core AI navigation index
-    │   ├── overview.md        # System overview
-    │   ├── navigation-guide.md # Document navigation guide
-    │   └── documentation-guide.md # Documentation standards guide
-    ├── architecture/          # System architecture documents
-    │   ├── system-overview.md # System architecture overview
-    │   └── tech-stack.md      # Technology stack details
-    ├── modules/               # Documents organized by functional module
-    ├── dev-guides/           # Development guides
-    │   ├── setup.md          # Environment setup
-    │   └── troubleshooting.md # Troubleshooting
-    ├── tasks/                # Task plans
-    │   └── current-task-plan.md # Current/completed task plans
-    └── maintenance/          # Maintenance documents
-        └── changelog.md      # Change log
-    ```
+   ```
+   docs/
+   ├── ai-index/              # Core AI navigation index
+   │   ├── overview.md        # System overview
+   │   ├── navigation-guide.md # Document navigation guide
+   │   └── documentation-guide.md # Documentation standards guide
+   ├── architecture/          # System architecture documents
+   │   ├── system-overview.md # System architecture overview
+   │   └── tech-stack.md      # Technology stack details
+   ├── modules/               # Documents organized by functional module
+   ├── dev-guides/            # Development guides
+   │   ├── setup.md           # Environment setup
+   │   └── troubleshooting.md # Troubleshooting
+   ├── tasks/                 # Task plans
+   │   └── current-task-plan.md # Current/completed task plans
+   └── maintenance/           # Maintenance documents
+       └── changelog.md       # Change log
+   ```
 
-3.  **Project-Specific Directories**:
-    Add specific documents based on project type:
+3. **Project-Specific Directories**:
+   Add specific documents based on project type:
 
-    a)  **Frontend Application**:
-    ```
-    docs/
-    ├── architecture/
-    │   ├── component-relations.md # Component relationship diagram
-    │   └── state-management.md    # State management
-    └── modules/
-        ├── components/           # UI component documentation
-        └── pages/                # Page documentation
-    ```
+   a) **Frontend Application**:
+   ```
+   docs/
+   ├── architecture/
+   │   ├── component-relations.md # Component relationship diagram
+   │   └── state-management.md    # State management
+   └── modules/
+       ├── components/           # UI component documentation
+       └── pages/                # Page documentation
+   ```
 
-    b)  **Backend/API Service**:
-    ```
-    docs/
-    ├── architecture/
-    │   ├── data-models.md        # Data models
-    │   └── service-relations.md  # Service relationship diagram
-    ├── dev-guides/
-    │   └── database-migrations.md # Database migrations
-    └── external-resources/
-        └── apis/                 # API documentation
-    ```
+   b) **Backend/API Service**:
+   ```
+   docs/
+   ├── architecture/
+   │   ├── data-models.md        # Data models
+   │   └── service-relations.md  # Service relationship diagram
+   ├── dev-guides/
+   │   └── database-migrations.md # Database migrations
+   └── external-resources/
+       └── apis/                 # API documentation
+   ```
 
-    c)  **Command-Line Tool**:
-    ```
-    docs/
-    ├── architecture/
-    │   └── command-flow.md       # Command flow diagram
-    └── modules/
-        └── commands/             # Command documentation
-    ```
+   c) **Command-Line Tool**:
+   ```
+   docs/
+   ├── architecture/
+   │   └── command-flow.md       # Command flow diagram
+   └── modules/
+       └── commands/             # Command documentation
+   ```
 
-    d)  **Full-Stack Application**:
-    May require all documents for both frontend and backend.
-
-Ask: "What specific types of documents does your project require? Are there any particular areas that need detailed documentation?"
+   d) **Full-Stack Application**:
+   May require all documents for both frontend and backend.
 
 ### Rule File Structure
 
 In the project root directory, create the following rule file structure:
 
 ```
-.roo/
+.roo/                   # AI assistant rule file directory
 ├── rules/
-│   └── rules.md          # General rules: document access, usage, mode collaboration, MCP usage scenarios
+│   └── rules.md          # General rules: document access, usage methods, mode collaboration, MCP usage scenarios
 ├── rules-architect/
 │   └── rules.md          # Architect mode specific rules (concise)
 ├── rules-code/
@@ -119,14 +130,16 @@ In the project root directory, create the following rule file structure:
 Also, create a custom mode configuration file:
 
 ```
-.roomodes               # Custom mode definition file
+.roomodes               # Custom mode definition file (controls AI assistant working modes)
 ```
+
+> **Note**: Rule files (all files in the `.roo/` directory and `.roomodes` file in the root directory) constitute the configuration system that guides the AI coding assistant's work. These files are not part of the project documentation library, but define the AI assistant's behavioral standards, permissions, and workflows.
 
 ## Document Metadata System
 
 ### Document Metadata Tags
 
-For each Markdown document related to project modules (Note: does not include rule files under the `.roo` directory), add the following metadata tags at the beginning of the document:
+Add the following metadata tags to the beginning of each Markdown document related to project modules:
 
 ```markdown
 ---
@@ -136,6 +149,8 @@ ai_contexts: [architecture|development|implementation|usage] # Document purpose 
 ai_relations: [path/to/related/doc1, path/to/related/doc2, ...] # Document relationships
 ---
 ```
+
+> **Important**: These metadata tags should only be applied to documents in the documentation library (the `docs/` directory), not to rule files.
 
 ### Content Marking System
 
@@ -187,59 +202,30 @@ Usage instructions, suitable for understanding how to use features.
 
 ## Custom Mode Configuration
 
-### Guiding Users to Create Custom Modes
+### Setting Up Custom Modes
 
-When configuring the `.roomodes` file, guide users through the following steps to create specific functional modes:
+When configuring the `.roomodes` file, follow these steps to create specific functional modes:
 
-1.  **Explain the purpose and value of custom modes**:
-    *   Introduce how custom modes can specialize AI capabilities.
-    *   Explain how different modes can change AI behavior and expertise.
+1. **Test Mode Setup**:
+   - Determine the testing focus (UI testing, integration testing, unit testing, etc.)
+   - Choose testing tools and frameworks
+   - Define testing processes and strategies (including test failure handling strategies and post-test actions)
 
-2.  **Guide creation of Test Mode**:
-    Guide users to create a Test Mode through a series of questions:
-    
-    a)  Test Focus:
-    *   "What types of tests do you want Test Mode to primarily focus on? UI tests, integration tests, unit tests?"
-    *   "What processes and steps should testing follow?"
-    
-    b)  Test Tool Preference:
-    *   "Which testing tools or frameworks do you prefer to use?"
-    *   "How do you want to manage and record test results?"
-    
-    c)  Test Strategy:
-    *   "What handling strategy do you want to adopt when a test fails?"
-    *   "What follow-up actions do you want after testing is complete?"
+2. **Summary Mode Setup**:
+   - Determine the summary focus (implementation details, architectural decisions, performance metrics, etc.)
+   - Establish document update strategies (determine which key documents need updating and their rules)
+   - Set content quality standards (format, structure requirements, etc.)
 
-3.  **Guide creation of Summary Mode**:
-    Guide users to create a Summary Mode through the following questions:
-    
-    a)  Summary Focus:
-    *   "What aspects do you want Summary Mode to focus on? Implementation details, architectural decisions, performance metrics?"
-    *   "What key parts should the summary include?"
-    
-    b)  Document Update Strategy:
-    *   "Which key documents need to be updated after the summary is complete?"
-    *   "What rules should be followed when updating documents?"
-    
-    c)  Quality Assurance:
-    *   "How do you define high-quality summary content?"
-    *   "Are there any specific format or structural requirements?"
-
-4.  **Provide Mode Template Examples**:
-    Based on user responses, provide corresponding mode definition templates and ask users to confirm or modify them.
-
-### Custom Mode Template Example
-
-Show users the following `.roomodes` example and explain how to adjust it according to their needs:
+3. **Custom Mode Template**:
 
 ```json
 {
   "customModes": [
     {
       "slug": "test",
-      "name": "🔦 Test",
+      "name": "🧪 Test",
       "roleDefinition": "You are a professional Web application tester capable of creating test plans, executing tests, and providing solutions.",
-      "customInstructions": "After entering Test Mode:\n\n1. Check for compilation errors\n2. Create a test plan\n3. Add debugging information\n4. Run test cases\n5. Propose fix solutions\n6. Ensure all tests pass\n\n# Web Application Testing (if applicable)\n\nUse playwright for E2E testing:\n1. Automate UI interaction flows\n2. Validate page elements and states\n3. Test data requests and responses",
+      "customInstructions": "After entering Test Mode:\n\n1. Check for compilation errors\n2. Create a test plan\n3. Add debugging information\n4. Run test cases\n5. Propose fix solutions\n6. Ensure all tests pass",
       "groups": ["read", "edit", "command", "mcp", "browser"],
       "source": "project"
     },
@@ -255,34 +241,21 @@ Show users the following `.roomodes` example and explain how to adjust it accord
 }
 ```
 
-> **Note**: The "Web Application Testing" in the example above is only applicable to Web applications. You should adjust the relevant content based on the project's actual situation and the MCP services used.
-
-5.  **Guide users to customize other modes**:
-    *   "Besides Test and Summary modes, do you need other specific functional modes?"
-    *   "What expertise and workflows should these modes have?"
-
 ## Rule File Configuration
 
 ### Rule File Basic Principles
 
-When creating rule files, follow these basic principles:
--   **General Rule File** ([`.roo/rules/rules.md`](.roo/rules/rules.md)) can be relatively detailed, including document access, usage methods, mode collaboration relationships, and MCP usage scenarios.
--   **Specific Mode Rule Files** ([`.roo/rules-xxx/rules.md`](.roo/rules-xxx/rules.md)) should remain concise, containing only the 3-5 most core rules for that mode, avoiding redundancy.
+Rule files are key configurations that guide AI coding assistants, with a clear distinction from the documentation library:
+- **Rule Files**: Guide AI assistants on how to work, how to use the documentation library, and how to collaborate between different modes
+- **Documentation Library**: Describes the project's architecture, functionality, and implementation
 
-Ask: "What aspects do you want the general rule file to emphasize? Which MCP services do you plan to use and what are their usage scenarios? For each specific mode, what are the 3-5 most important rules?"
+When creating rule files, follow these principles:
+- The **General Rule File** (`.roo/rules/rules.md`) includes document access, usage methods, mode collaboration relationships, and MCP usage scenarios
+- **Specific Mode Rule Files** (`.roo/rules-xxx/rules.md`) remain concise, containing only the 3-5 most core rules for that mode
 
-#### General Rule File ([`.roo/rules/rules.md`](.roo/rules/rules.md))
+### Mode Collaboration Rules
 
-Focus on core content:
--   Knowledge search methods
--   How to use the document tagging system
--   Core navigation paths
--   Mode collaboration rules
--   MCP usage scenarios
-
-#### Mode Collaboration Rules
-
-Add mode collaboration workflow instructions in the general rule file ([`.roo/rules/rules.md`](.roo/rules/rules.md)):
+Add mode collaboration workflow instructions to the general rule file:
 
 ```markdown
 ## Mode Collaboration Workflow
@@ -298,331 +271,296 @@ To efficiently complete development tasks, AI modes should follow this collabora
     *   After all coding work is done, should switch to **Test Mode** for comprehensive testing.
 
 3.  **Test Mode**:
-    *   Responsible for preparing resources needed for testing (e.g., unit test scripts, test case documents, necessary log configurations).
-    *   Executes tests (e.g., E2E tests, compilation scripts, unit tests).
+    *   Responsible for preparing test resources and executing tests.
     *   If issues are found during testing, should switch back to **Code Mode** for fixes.
     *   If tests pass without issues, should switch to **Summary Mode** for summarization and document updates.
 
 4.  **Summary Mode**:
-    *   After tests pass, responsible for summarizing work and updating all relevant documents according to the standards in [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md).
+    *   After tests pass, responsible for summarizing work and updating all relevant documents.
     *   Ensures documentation is consistent with the final implementation.
 
 5.  **Orchestrator Mode** (if used):
     *   Responsible for coordinating complex tasks, possibly involving switching between the above modes and task allocation.
-
-> **Note**: This is a general collaboration flow. You can adjust or extend these rules based on specific project needs.
 ```
 
-#### Specific Mode Rule Files ([`.roo/rules-xxx/rules.md`](.roo/rules-xxx/rules.md))
+### Specific Mode Rule Files
 
 Create concise rule files for each mode, focusing only on the 3-5 most core working rules for that mode:
 
--   **Architect Mode** ([`.roo/rules-architect/rules.md`](.roo/rules-architect/rules.md)):
-    -   Note: Do not repeat the basic instructions of Architect mode itself; only provide project-specific supplementary guidance.
-    -   Focus on project-specific architectural design patterns and principles.
-    -   Be concise, maximum 3-5 rules.
-    
--   **Code Mode** ([`.roo/rules-code/rules.md`](.roo/rules-code/rules.md)): Focus on coding standards and practices, 3-5 rules.
--   **Summary Mode** ([`.roo/rules-summary/rules.md`](.roo/rules-summary/rules.md)): Focus on document review and update processes, 3-5 rules.
--   **Test Mode** ([`.roo/rules-test/rules.md`](.roo/rules-test/rules.md)): Focus on test execution and issue tracking, 3-5 rules.
+- **Architect Mode** (`.roo/rules-architect/rules.md`): Focus on project-specific architectural design patterns and principles
+- **Code Mode** (`.roo/rules-code/rules.md`): Focus on coding standards and practices
+- **Summary Mode** (`.roo/rules-summary/rules.md`): Focus on document review and update processes
+- **Test Mode** (`.roo/rules-test/rules.md`): Focus on test execution and issue tracking
 
 ## MCP Service Configuration and Integration
 
-### MCP Service Guidance and Usage Scenario Integration
+### MCP Usage Scenarios
 
-MCP services are important extensions of AI assistant functionality and their usage scenarios need to be integrated into rule files. The following process will help you configure and integrate MCP service usage scenarios:
+Add MCP usage scenarios to the general rule file, for example:
 
-1.  **MCP Service Needs Analysis**:
-    *   "What types of MCP services does your project need? Knowledge retrieval, browser automation, code analysis, or others?"
-    *   "What role will these services play in the project development process?"
+```markdown
+## MCP Usage Scenarios
 
-2.  **MCP Service Configuration**:
-    Guide the user to manually configure the [`mcp.json`](mcp.json) file or set up MCP services through other means based on project needs. The AI assistant does not need to directly create or modify this configuration file.
+This project uses the following MCP services, applied in specific scenarios:
 
-3.  **Integrate MCP Usage Scenarios into Rules**:
-    After gathering MCP service information, **add MCP usage scenarios to the general rule file ([`.roo/rules/rules.md`](.roo/rules/rules.md))**, for example:
+### Playwright
 
-    ```markdown
-    ## MCP Usage Scenarios
+- **Scenario 1**: Access technical documentation websites to gather information
+- **Scenario 2**: Conduct E2E testing for Web applications, verifying UI interactions and functional correctness
+- **Scenario 3**: Perform page performance analysis and screenshot comparisons
 
-    This project uses the following MCP services, applied in specific scenarios:
+### Perplexity
 
-    ### Playwright
+- **Scenario 1**: Query unfamiliar technology stacks or API usage
+- **Scenario 2**: Resolve difficult problems encountered during development
+- **Scenario 3**: Learn about industry best practices and design patterns
 
-    -   **Scenario 1**: Access technical documentation websites to gather information, e.g., React, Node.js docs.
-    -   **Scenario 2**: Conduct E2E testing for Web applications, verifying UI interactions and functional correctness.
-    -   **Scenario 3**: Perform page performance analysis and screenshot comparisons.
+> **Note**: Use MCPs only in appropriate scenarios to avoid unnecessary external requests.
+```
 
-    ### Perplexity
-
-    -   **Scenario 1**: Query unfamiliar technology stacks or API usage.
-    -   **Scenario 2**: Resolve difficult problems encountered during development.
-    -   **Scenario 3**: Learn about industry best practices and design patterns.
-
-    > **Note**: Use MCPs only in appropriate scenarios to avoid unnecessary external requests.
-    ```
-
-    Simultaneously, MCP usage scenario prompts can be added to the `customInstructions` of specific modes, for example:
-    -   In Test Mode customInstructions: Use Playwright for E2E testing.
-    -   In Code Mode customInstructions: Use Perplexity to solve technical challenges.
-
-4.  **Collect Specific MCP Information**:
-    *   "Which MCP services have you configured? What is the main function of each service?"
-    *   "In which specific scenarios should these MCP services be used?"
-
-5.  **Associate Modes with MCP Scenarios**:
-    Clearly define which modes should preferentially use which MCP services, for example:
-    -   Test Mode primarily uses Playwright for automated testing.
-    -   Architect and Code Modes may use Perplexity more for technical research.
-    -   Summary Mode may need to use specific documentation tools for document updates.
-
-> **Important**: Rules do not need to include MCP's JSON configuration or XML call formats, only clearly define usage scenarios so the AI assistant knows when to use which MCP service.
+Add MCP usage scenario prompts to the `customInstructions` of specific modes, for example:
+- In Test Mode: Use Playwright for E2E testing
+- In Code Mode: Use Perplexity to solve technical challenges
 
 ## Summary Mode and Document Maintenance After Code Changes
 
 ### Core Responsibilities of Summary Mode
 
-The main role of Summary Mode is to **maintain the entire documentation system** according to the standards and processes defined in [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) **after project code changes**. This is a key mechanism to ensure that project documentation remains synchronized with code implementation.
+The main role of Summary Mode is to maintain the entire documentation system according to the standards defined in `docs/ai-index/documentation-guide.md` **after project code changes**. Main tasks include:
 
-Specifically, Summary Mode needs to perform the following core tasks:
+1. **Change Detection and Analysis**
+   - Analyze code commit content to identify changes in features, APIs, components
+   - Determine which documents are affected by these changes
+   - Decide whether to create, update, or deprecate documents
 
-1.  **Change Detection and Analysis**
-    *   Analyze code commit content to identify which features, APIs, components have been added, modified, or removed.
-    *   Determine which existing documents these changes affect.
-    *   Decide whether to create new documents, update existing ones, or deprecate outdated ones.
+2. **Document Update Implementation**
+   - Follow the document lifecycle process (Create → Update → Split → Deprecate → Archive)
+   - Apply appropriate metadata updates
+   - Ensure document structure adheres to standard specifications
+   - Use AI markers to annotate important content and context
 
-2.  **Document Update Implementation**
-    *   Strictly follow the document lifecycle process defined in [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) (Create → Update → Split → Deprecate → Archive).
-    *   Apply appropriate metadata updates (update version numbers, last updated dates, etc.).
-    *   Ensure document structure adheres to standard specifications.
-    *   Appropriately use AI markers to highlight important content and context.
+3. **Document Relationship Maintenance**
+   - Update cross-references between documents
+   - Ensure `ai_relations` metadata tags remain accurate
+   - Maintain document navigation paths
 
-3.  **Document Relationship Maintenance**
-    *   Update cross-references between documents.
-    *   Ensure `ai_relations` metadata tags remain accurate.
-    *   Maintain navigation paths between documents.
+4. **Quality Assurance Process**
+   - Execute the four-stage review process
+   - Apply document review checklists to validate update quality
+   - Ensure code samples are consistent with the latest implementation
+   - Verify the validity of all links and references
 
-4.  **Quality Assurance Process**
-    *   Execute the four-stage review process defined in [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md).
-    *   Apply document review checklists to validate update quality.
-    *   Ensure code samples are consistent with the latest implementation.
-    *   Verify the validity of all links and references.
-
-5.  **Key File Updates**
-    *   Record document updates in [`changelog.md`](docs/maintenance/changelog.md).
-    *   Update [`current-task-plan.md`](docs/tasks/current-task-plan.md) if necessary.
-    *   Ensure index documents in the [`ai-index`](docs/ai-index) directory reflect the latest changes.
-
-Through these activities, Summary Mode ensures that project documentation is always up-to-date, accurate, and synchronized with code implementation. This is crucial for maintaining a high-quality "AI-understandable" knowledge network, enabling AI assistants to provide precise development support based on correct project context.
-
-### Relationship between [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) and Summary Mode
-
-The [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) file is the core reference document for Summary Mode, detailing how to perform document updates and maintenance. This relationship is very important because:
-
-1.  **Provides Execution Standards** - It defines the complete document lifecycle process and maintenance strategy.
-2.  **Sets Quality Benchmarks** - Ensures update quality through document review checklists and a four-stage review process.
-3.  **Guides Decisions** - Helps Summary Mode decide when to create, update, split, or deprecate documents.
-4.  **Ensures Consistency** - Ensures all document updates follow uniform format and structural standards.
-
-When Summary Mode is active, it should always refer to [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) as the authoritative reference; it is the foundation for ensuring documentation system consistency and quality. Rule files should explicitly instruct the AI assistant to first review [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md) each time it enters Summary Mode and use it as a guide for document maintenance activities.
+5. **Key File Updates**
+   - Update changelog.md, current-task-plan.md, and index documents in the ai-index directory
 
 ## Document Content and Specifications
 
 ### Core Index Documents
 
-Create a system overview in [`docs/ai-index/overview.md`](docs/ai-index/overview.md), including:
+Create a system overview in `docs/ai-index/overview.md`, including:
+1. Overall project introduction
+2. Description of core functional modules
+3. Brief overview of the technology stack
+4. Explanation of the documentation system
 
-1.  Overall project introduction
-2.  Description of core functional modules
-3.  Brief overview of the technology stack
-4.  Explanation of the documentation system
+Create navigation paths in `docs/ai-index/navigation-guide.md`, including:
+1. Beginner's Path
+2. System Architecture Understanding Path
+3. Feature Development Path
+4. Troubleshooting Path
+5. Project History Query
 
-Create navigation paths in [`docs/ai-index/navigation-guide.md`](docs/ai-index/navigation-guide.md):
-
-1.  Beginner's Path:
-    *   From overview to navigation, then to architecture.
-
-2.  System Architecture Understanding Path:
-    *   Architecture overview to various architectural component documents.
-
-3.  Feature Development Path:
-    *   Module overview → Implementation details → Development guides.
-
-4.  Troubleshooting Path:
-    *   From troubleshooting to implementation details, then to task plans.
-
-5.  Project History Query:
-    *   Changelog and related documents.
-
-Detail document maintenance processes and standards in [`docs/ai-index/documentation-guide.md`](docs/ai-index/documentation-guide.md):
-
-1.  Document lifecycle process (Create → Update → Split → Deprecate → Archive)
-2.  Specific standards and strategies for creating, updating, and splitting documents
-3.  Document metadata and structural specifications
-4.  AI marker usage guide and best practices
-5.  Document review checklist and quality assurance process
-
-### Architecture Document Content Specifications
-
-Architecture documents should include (select applicable content based on project type):
-
--   System architecture diagram
--   Component/module relationship description
--   Data flow diagram
--   Technology stack details
--   Extension points explanation
--   If applicable: data models, API design, state management, etc.
+Detail document maintenance processes and standards in `docs/ai-index/documentation-guide.md`, including:
+1. Document lifecycle process
+2. Specific standards for creating, updating, and splitting documents
+3. Document metadata and structural specifications
+4. AI marker usage guide
+5. Document review checklist and quality assurance process
 
 ### Module Document Content Specifications
 
-Each module document should follow:
+Each module document should follow this structure:
 
 #### Module Overview (`overview.md`)
 
-	---
-	ai_keywords: [ModuleName, CoreFunctionKeyword]
-	ai_contexts: [architecture, usage]
-	ai_relations: [path/to/related/module, path/to/related/guide]
-	---
-	
-	# ModuleName Overview
-	
-	<!-- AI-IMPORTANCE:level=critical -->
-	## Core Functionality
-	
-	Briefly describe the core functionality and purpose of the module.
-	
-	## Main Features
-	
-	-   Feature 1: Description
-	-   Feature 2: Description
-	-   Feature 3: Description
-	
-	<!-- AI-CONTEXT-START:type=architecture -->
-	## Architectural Design
-	
-	Describe the architectural design of this module, including its relationship with other modules.
-	
-	### Component Structure
-	
-	Describe the internal component structure.
-	<!-- AI-CONTEXT-END -->
-	
-	<!-- AI-CONTEXT-START:type=usage -->
-	## How to Use
-	
-	Describe how to use the basic functions of this module.
-	
-	### Common Scenarios
-	
-	Describe common usage scenarios.
-	<!-- AI-CONTEXT-END -->
-	
-	## Related Resources
-	
-	-   [Implementation Details](./implementation.md)
-	-   [Related Development Guide](../../dev-guides/RelatedGuide.md)
+```markdown
+---
+ai_keywords: [ModuleName, CoreFunctionKeyword]
+ai_contexts: [architecture, usage]
+ai_relations: [path/to/related/module, path/to/related/guide]
+---
+
+# ModuleName Overview
+
+<!-- AI-IMPORTANCE:level=critical -->
+## Core Functionality
+
+Briefly describe the core functionality and purpose of the module.
+
+## Main Features
+
+- Feature 1: Description
+- Feature 2: Description
+- Feature 3: Description
+
+<!-- AI-CONTEXT-START:type=architecture -->
+## Architectural Design
+
+Describe the architectural design of this module, including its relationship with other modules.
+
+### Component Structure
+
+Describe the internal component structure.
+<!-- AI-CONTEXT-END -->
+
+<!-- AI-CONTEXT-START:type=usage -->
+## How to Use
+
+Describe how to use the basic functions of this module.
+
+### Common Scenarios
+
+Describe common usage scenarios.
+<!-- AI-CONTEXT-END -->
+
+## Related Resources
+
+- [Implementation Details](./implementation.md)
+- [Related Development Guide](../../dev-guides/RelatedGuide.md)
+```
 
 #### Implementation Details (`implementation.md`)
 
-	---
-	ai_keywords: [ModuleName, Implementation, API, DataFlow]
-	ai_contexts: [implementation, development]
-	ai_relations: [path/to/module/overview, path/to/data/model]
-	---
-	
-	# ModuleName Implementation Details
-	
-	<!-- AI-IMPORTANCE:level=high -->
-	## Technical Overview
-	
-	Briefly describe the technologies and methods used in the implementation.
-	
-	<!-- AI-CONTEXT-START:type=implementation -->
-	## Core Implementation
-	
-	Detail the core functionality implementation.
-	
-	### Data Structures
-	
-	```typescript
-	interface ExampleInterface {
-	field1: string;
-	field2: number;
-	}
-	```
-	
-	### Key Algorithms
-	
-	Describe key algorithms.
-	
-	### Data Flow
-	
-	Describe how data flows through this module.
-	<!-- AI-CONTEXT-END -->
-	
-	<!-- AI-CONTEXT-START:type=development -->
-	## Development Guide
-	
-	### API Usage
-	
-	```typescript
-	// Example code
-	const result = api.doSomething(param);
-	```
-	
-	### Important Notes
-	
-	Issues to be aware of during development.
-	
-	### Extension Points
-	
-	How to extend the functionality of this module.
-	<!-- AI-CONTEXT-END -->
-	
-	## Testing Strategy
-	
-	Describe how to test this module.
-	
-	## Known Limitations
-	
-	List known limitations and issues.
+```markdown
+---
+ai_keywords: [ModuleName, Implementation, API, DataFlow]
+ai_contexts: [implementation, development]
+ai_relations: [path/to/module/overview, path/to/data/model]
+---
 
-## Migration Implementation Process
+# ModuleName Implementation Details
 
-The migration process will adopt an interactive approach, and I will communicate with you at each step:
+<!-- AI-IMPORTANCE:level=high -->
+## Technical Overview
 
-1.  **Analyze Project Structure**
-    *   I will first ask you about the main functional modules and components of the project.
-    *   Together, we will analyze the project type and characteristics to determine a suitable documentation structure.
-    *   Determine if the project is a frontend application, backend service, command-line tool, or other.
+Briefly describe the technologies and methods used in the implementation.
 
-2.  **Create Directory Structure**
-    *   Customize the documentation directory structure based on the project type.
-    *   Determine which specific documents are necessary (e.g., component relationship diagrams for frontend projects, data models for backend projects).
+<!-- AI-CONTEXT-START:type=implementation -->
+## Core Implementation
 
-3.  **Configure Modes and Rule Files**
-    *   Discuss and determine custom modes suitable for your project (especially test and summary modes).
-    *   Create clear and concise rule files according to your needs, including mode collaboration rules.
-    *   Ensure specific mode rule files remain concise, containing only 3-5 core rules.
+Detail the core functionality implementation.
 
-4.  **MCP Service Configuration and Usage Scenario Integration**
-    *   Analyze what types of MCP services your project needs.
-    *   **Guide you to manually configure MCP services**; the AI assistant will not directly modify configuration files.
-    *   Collect information about your actually configured MCP services and their usage scenarios.
-    *   **Add MCP usage scenarios to the general rule file** to help the AI assistant understand when to use which MCP service.
-    *   Also, add MCP usage for specific scenarios to the `customInstructions` of corresponding modes.
+### Data Structures
 
-5.  **Establish Core Documents**
-    *   Create basic index and navigation documents.
-    *   Adjust document content based on project characteristics.
+```typescript
+interface ExampleInterface {
+field1: string;
+field2: number;
+}
+```
 
-6.  **Create Documents for Modules**
-    *   Together, identify the core modules of the project.
-    *   Use templates to create module documents.
+### Key Algorithms
 
-7.  **Document Quality Verification**
-    *   Ensure all documents related to project modules have complete metadata tags.
-    *   Verify the relationships between documents.
+Describe key algorithms.
 
-Throughout the process, I will adjust the migration strategy based on your feedback to ensure the final documentation system fully meets your project needs.
+### Data Flow
+
+Describe how data flows through this module.
+<!-- AI-CONTEXT-END -->
+
+<!-- AI-CONTEXT-START:type=development -->
+## Development Guide
+
+### API Usage
+
+```typescript
+// Example code
+const result = api.doSomething(param);
+```
+
+### Important Notes
+
+Issues to be aware of during development.
+
+### Extension Points
+
+How to extend the functionality of this module.
+<!-- AI-CONTEXT-END -->
+
+## Testing Strategy
+
+Describe how to test this module.
+
+## Known Limitations
+
+List known limitations and issues.
+```
+
+## Building Implementation Process
+
+The building process adopts an interactive approach, following these steps:
+
+1. **Analyze Project Structure**
+   - Determine the main functional modules and components
+   - Analyze project type and characteristics to determine suitable documentation structure
+   - Clarify whether the project is a frontend application, backend service, command-line tool, or other type
+
+2. **Create Directory Structure**
+   - Customize the documentation directory structure based on project type
+   - Determine necessary specific documents (e.g., component relationship diagrams, data models)
+
+3. **Configure Modes and Rule Files**
+   - Create custom modes suitable for the project (especially test and summary modes)
+   - Create clear and concise rule files, including mode collaboration rules
+   - Ensure specific mode rule files remain concise, containing only 3-5 core rules
+
+4. **MCP Service Configuration and Usage Scenario Integration**
+   - Determine what types of MCP services the project needs
+   - Collect information about configured MCP services and their usage scenarios
+   - Add MCP usage scenarios to the general rule file
+   - Add specific MCP usage scenarios to the customInstructions of corresponding modes
+
+5. **Establish Core Documents**
+   - Create basic index and navigation documents
+   - Adjust document content based on project characteristics
+
+6. **Create Documents for Modules**
+   - Identify core project modules
+   - Use templates to create module documents
+
+7. **Document Quality Verification**
+   - Ensure all module documents have complete metadata tags
+   - Verify relationships between documents
+
+## Document Review Phase
+
+After completing the documentation building process, a comprehensive document review is needed to ensure all content is based on the project's actual implementation. **The key step is to use the `new_task` tool to initiate a review subtask in summary mode**.
+
+```xml
+<new_task>
+<mode>summary</mode>
+<message>Please conduct a comprehensive review of the documentation system to confirm content consistency with the project's actual implementation.</message>
+</new_task>
+```
+
+> **Important**: Before executing this step, ensure the `.roo/rules-summary/rules.md` file has been created and includes appropriate document review guidance.
+
+### Document Review Process
+
+The review process should systematically complete these steps:
+
+1. **Comparison Check** - Verify consistency between document descriptions and actual code implementation, including API descriptions, parameters, and other technical details
+   
+2. **Issue Correction** - Update inaccurate content, remove fictional descriptions, supplement missing information
+   
+3. **Quality Validation** - Ensure all metadata tags correctly reflect content, verify reference relationships between documents
+
+### Post-Review Follow-up Actions
+
+After completing the document review:
+1. Submit a review report listing all identified issues and completed corrections
+2. Update index documents to reflect the latest accurate information
+3. Record review findings and corrections in the changelog
+4. Update the task plan if necessary
+
+Through this systematic review process, the AI-optimized documentation management system provides true and accurate project context, giving AI coding assistants a reliable knowledge foundation.
