@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌟 Vibook — Vibe Coding 背后的知识库
+# 🌟 Vibook — 自动维护的 Vibe Coding 项目知识库
 
 ![版本](https://img.shields.io/badge/版本-0.1.0-blue)
 ![支持工具](https://img.shields.io/badge/支持-Roo%20Code-brightgreen)
