@@ -54,7 +54,9 @@ graph TD
 ## 🚀 Quick Start
 
 1. **Prepare**: Install Roo Code with Claude 3.7 Sonnet or Gemini 2.5 Pro
-2. **Start**: Switch to `architect` mode in Roo Code
+2. **Start**:
+   - For small to medium projects: Switch to `architect` mode in Roo Code
+   - For large projects: Switch to `orchestrator` mode in Roo Code
 3. **Input**: Choose [English](./ROO-PROMPT-EN.md) or [Chinese](./ROO-PROMPT.md) prompt
 4. **Configure**: Answer questions to set up documentation system
 5. **Adjust** (if needed): Run prompt again to reconfigure

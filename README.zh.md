@@ -54,7 +54,9 @@ graph TD
 ## 🚀 快速上手
 
 1. **准备**：安装Roo Code（推荐Claude 3.7 Sonnet或Gemini 2.5 Pro）
-2. **开始**：切换到Roo Code的`architect`模式
+2. **开始**：
+   - 对于中小型项目：切换到Roo Code的`architect`模式
+   - 对于大型项目：切换到Roo Code的`orchestrator`模式
 3. **输入**：选择[中文](./ROO-PROMPT.md)或[英文](./ROO-PROMPT-EN.md)提示词
 4. **配置**：回答问题设置文档系统
 5. **调整**（如需）：重新执行提示词进行重新配置
