@@ -30,7 +30,7 @@ Unlike traditional documentation, this system is specifically optimized for AI t
 
 ## Task Overview
 
-1. **Analyze current project structure**: Scan project directories, code, and existing documentation
+1. **Deeply analyze current project**: Comprehensively understand the project architecture, implementation mechanisms of core modules, key code logic, and scan project directories, code, and existing documentation
 2. **Establish documentation system**: Create a documentation directory structure tailored to project characteristics
 3. **Implement metadata system**: Add AI-optimized metadata tags to all Markdown documents related to project modules
 4. **Create core documents**: Establish navigation and index documents
@@ -498,10 +498,11 @@ Describe common usage scenarios.
 
 The building process adopts an interactive approach, following these steps:
 
-1. **Analyze Project Structure**
-   - Determine the main functional modules and components
-   - Analyze project type and characteristics to determine suitable documentation structure
-   - Clarify whether the project is a frontend application, backend service, command-line tool, or other type
+1. **Deeply Analyze Project**
+   - Thoroughly understand the project architecture, implementation mechanisms of core modules, key code logic, and data flows.
+   - Identify the main functional modules and components and their interrelationships.
+   - Analyze the project type (frontend, backend, full-stack, tool, etc.) and technology stack characteristics to lay the foundation for subsequent documentation structure design and content generation.
+   - Scan project directories, code, and existing documentation to gather basic information needed for building the documentation system.
 
 2. **Create Directory Structure**
    - Customize the documentation directory structure based on project type
