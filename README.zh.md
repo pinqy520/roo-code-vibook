@@ -16,15 +16,56 @@
 
 ## 📖 简介
 
-Vibook创建一个"AI可理解"的知识网络，帮助AI编码助手（Roo Code）高效维护现有项目。
+Vibook 创建一个"AI 可理解"的知识网络，帮助 AI 编码助手（Roo Code）高效维护现有项目。
 
-| 能力 | 实现方式 |
-|:----:|:--------|
-| 🔍 **理解项目结构** | 目录组织与关系映射 |
+|        能力         | 实现方式               |
+| :-----------------: | :--------------------- |
+| 🔍 **理解项目结构** | 目录组织与关系映射     |
 | 🎯 **定位关键信息** | 元数据标签与重要性标记 |
-| 💡 **理解代码意图** | 上下文标记系统 |
-| 🚀 **开发新功能** | 模块实现细节文档 |
-| 🛠️ **排查问题** | 明确的文档导航路径 |
+| 💡 **理解代码意图** | 上下文标记系统         |
+|  🚀 **开发新功能**  | 模块实现细节文档       |
+|   🛠️ **排查问题**   | 明确的文档导航路径     |
+
+## 🚀 快速上手
+
+1. **准备**：安装 Roo Code（推荐 Claude 3.7 Sonnet 或 Gemini 2.5 Pro）
+2. **开始**：
+   - 对于中小型项目：切换到 Roo Code 的`architect`模式
+   - 对于大型项目：切换到 Roo Code 的`orchestrator`模式
+3. **输入**：选择[中文](./ROO-PROMPT.md)或[英文](./ROO-PROMPT-EN.md)提示词
+4. **配置**：回答问题设置文档系统
+5. **调整**（如需）：重新执行提示词进行重新配置
+
+> **注意**：自动文档生成将根据您的回答创建所有必要的文件和配置。
+
+## 👀 Showcase
+
+以下展示 Vibook 在实际项目中的应用案例，展现其自动生成文档和辅助开发的能力。
+
+### Revas 项目案例
+
+> [Revas](https://github.com/pinqy520/revas) 是一个用 React + CSS 在 Canvas 2D API 上 上写高性能 UI 的库，已经四年没更新了，还使用的 rollup 1.x, react-script, typescript v4，只支持 react 17。
+
+下面视频演示了，在这个老仓库，如何通过 Vibook 自动生成文档知识库，并通过 vibe coding 完成依赖的升级和 modernization。
+
+<table>
+  <tr>
+    <td align="center" >
+      <strong>文档生成过程</strong>
+    </td>
+    <td align="center">
+      <strong>使用Vibook进行开发</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="51.3%">
+      <video controls width="100%" src="https://github.com/user-attachments/assets/8f2a8f80-a494-4034-a3cd-01bd6004fe4a" title="Generating Documentation"></video>
+    </td>
+    <td align="center" width="49.7%">
+      <video controls width="100%" src="https://github.com/user-attachments/assets/1195c582-eab5-415c-9ee4-1835f894f3d9" title="Vibe Coding with Vibook"></video>
+    </td>
+  </tr>
+</table>
 
 ## 🏗️ 系统架构
 
@@ -36,32 +77,20 @@ graph TD
     classDef docSystem stroke:#333,stroke-width:1px
     classDef aiAssist stroke:#333,stroke-width:1px
     classDef component stroke:#333,stroke-width:1px
-    
+
     A((项目)):::project --> B{文档系统}:::docSystem
-    
+
     subgraph 文档子系统
         B --> C1[AI索引]:::component
         B --> C2[系统架构]:::component
         B --> C3[模块文档]:::component
         B --> C4[开发指南]:::component
     end
-    
+
     D[[AI助手]]:::aiAssist --> B
 ```
 
 </div>
-
-## 🚀 快速上手
-
-1. **准备**：安装Roo Code（推荐Claude 3.7 Sonnet或Gemini 2.5 Pro）
-2. **开始**：
-   - 对于中小型项目：切换到Roo Code的`architect`模式
-   - 对于大型项目：切换到Roo Code的`orchestrator`模式
-3. **输入**：选择[中文](./ROO-PROMPT.md)或[英文](./ROO-PROMPT-EN.md)提示词
-4. **配置**：回答问题设置文档系统
-5. **调整**（如需）：重新执行提示词进行重新配置
-
-> **注意**：自动文档生成将根据您的回答创建所有必要的文件和配置。
 
 ## 🔄 模式协作系统
 
@@ -74,7 +103,7 @@ flowchart LR
     classDef code stroke:#333,stroke-width:2px,shape:rect
     classDef test stroke:#333,stroke-width:2px,shape:diamond
     classDef summ stroke:#333,stroke-width:2px,shape:cylinder
-    
+
     User((用户)):::user -->|需求| Arch[架构师]:::arch
     Arch -->|设计| Code[代码]:::code
     Code -->|完成| Test{测试}:::test
@@ -87,7 +116,7 @@ flowchart LR
 
 ### 模式切换
 
-Roo会在适当时机自动建议切换。如需手动指示：
+Roo 会在适当时机自动建议切换。如需手动指示：
 
 ```
 "请切换到Code模式实现这个功能"
@@ -99,13 +128,13 @@ Roo会在适当时机自动建议切换。如需手动指示：
 
 ## 📋 生成文档
 
-| 类别 | 内容 |
-|:----:|:--------|
-| **AI索引** | 系统总览、导航指南、文档标准 |
-| **系统架构** | 系统结构、技术栈详情 |
-| **模块文档** | 功能文档、实现细节 |
-| **开发指南** | 环境设置、问题排查 |
-| **配置文件** | 模式设置、规则、MCP集成 |
+|     类别     | 内容                         |
+| :----------: | :--------------------------- |
+| **AI 索引**  | 系统总览、导航指南、文档标准 |
+| **系统架构** | 系统结构、技术栈详情         |
+| **模块文档** | 功能文档、实现细节           |
+| **开发指南** | 环境设置、问题排查           |
+| **配置文件** | 模式设置、规则、MCP 集成     |
 
 ---
 
